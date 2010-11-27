@@ -13,5 +13,14 @@ class PlayersControllerTest < ActionController::TestCase
 
       should respond_with :success
     end
+
+    context 'POST to create' do
+      setup do
+        post :create, :party_id=>@party.id, :player=>Factory.attributes_for(:player)
+      end
+
+      should set_session :player_id
+      should redirect_to('the party'){ party_path @party.id }
+    end
   end
 end

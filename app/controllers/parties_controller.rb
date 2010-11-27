@@ -6,8 +6,8 @@ class PartiesController < ApplicationController
     @party = Party.find params[:id]
   end
 
-  def new
-    @party
+  def create
+    @party = Party.create
+    redirect_to new_party_player_path(@party.id)
   end
-
 end

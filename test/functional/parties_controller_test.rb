@@ -17,14 +17,14 @@ class PartiesControllerTest < ActionController::TestCase
     should respond_with :success
   end
 
-  context 'POST to new' do
+  context 'POST to create' do
     setup do
-      post :new
+      post :create
       @new_party = Party.first :order=>'created_at desc'
     end
 
-    should redirect_to('the new player form') do
+    should(redirect_to('the new player form') do
       new_party_player_path :party_id=>@new_party.id
-    end
+    end)
   end
 end
