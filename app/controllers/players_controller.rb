@@ -10,9 +10,4 @@ class PlayersController < ApplicationController
 
     redirect_to party_path @party.id
   end
-
-  private
-  def load_party
-    @party = Party.find params[:party_id]
-  end
 end
