@@ -1,4 +1,10 @@
 Triskelion::Application.routes.draw do
+  get "party/index"
+
+  get "party/show"
+
+  get "party/new"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
