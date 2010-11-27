@@ -1,5 +1,13 @@
 Triskelion::Application.routes.draw do
 
+  get "chats/index"
+
+  get "chats/new"
+
+  get "rolls/index"
+
+  get "rolls/new"
+
   resources :parties do
     resources :players
   end
