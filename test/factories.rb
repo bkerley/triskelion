@@ -20,5 +20,5 @@ Factory.define :chat do |c|
   # party_id:integer player_id:integer content:text
   c.association :party
   c.association :player
-  c.content 'an awesome chat'
+  c.content { "an awesome chat #{rand(36**20).to_s(36)}" }
 end
