@@ -10,9 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101127211022) do
+ActiveRecord::Schema.define(:version => 20101127212753) do
 
   create_table "parties", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "players", :force => true do |t|
+    t.string   "name"
+    t.string   "tripcode"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
