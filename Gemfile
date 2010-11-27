@@ -29,4 +29,6 @@ group :development, :test do
   gem 'shoulda'
   gem 'mocha'
   gem 'factory_girl_rails'
+  gem 'test-unit'
+  gem 'guard-test'
 end
