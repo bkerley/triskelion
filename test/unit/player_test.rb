@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class PlayerTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  context 'a Player' do
+    setup do
+      @player = Factory :player
+    end
+
+    should have_many :rolls
+    should have_many :chats
   end
 end
