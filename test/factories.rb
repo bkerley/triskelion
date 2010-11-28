@@ -12,8 +12,6 @@ Factory.define :roll do |r|
   r.association :player
   r.count 2
   r.sides 6
-  r.result 7
-  r.description '3 4'
 end
 
 Factory.define :chat do |c|
