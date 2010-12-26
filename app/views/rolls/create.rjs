@@ -1,0 +1,2 @@
+rendered_roll = "<li id='#{dom_id @roll}'>#{ h @roll.inspect}</li>"
+page.insert_html :bottom, 'roll_list', rendered_roll

@@ -9,6 +9,9 @@ class RollsController < ApplicationController
 
   def create
     @roll = Roll.create_with_code :code=>params[:roll][:code], :player=>current_player, :party=>@party
-    redirect_to party_rolls_path @party.id
+    respond_to do |wants|
+      wants.html { redirect_to party_rolls_path @party.id }
+      wants.js
+    end
   end
 end

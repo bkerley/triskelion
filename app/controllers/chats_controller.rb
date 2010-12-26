@@ -9,6 +9,9 @@ class ChatsController < ApplicationController
 
   def create
     @chat = @party.chats.create! :player=>current_player, :content=>params[:chat][:content]
-    redirect_to party_chats_path @party.id
+    respond_to do |wants|
+      wants.html { redirect_to party_chats_path @party.id }
+      wants.js
+    end
   end
 end

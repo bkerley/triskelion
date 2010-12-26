@@ -1,0 +1,2 @@
+rendered_chat = "<li id='#{dom_id @chat}'>#{h @chat.inspect}</li>"
+page.insert_html :bottom, 'chat_list', rendered_chat
