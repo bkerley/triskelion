@@ -2,6 +2,7 @@ class PlayersController < ApplicationController
   before_filter :load_party
 
   def new
+    @player = Player.new
   end
 
   def create
