@@ -13,6 +13,10 @@ class Roll < ActiveRecord::Base
     create options
   end
 
+  def code
+    return nil unless count && sides
+    "#{count}d#{sides}"
+  end
 
   private
   def roll_dice
