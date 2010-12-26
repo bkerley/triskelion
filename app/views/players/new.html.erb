@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:app/views/players/new.html.erb
 <%= form_for @player, :url=>party_players_path(@party.id) do |f| %>
   <p>
     <%= f.label :name %>
@@ -12,4 +13,22 @@
   <p>
     <%= f.submit 'Join Chat' %>
   </p>
+=======
+<h1>Add New Player</h1>
+<%= form_for @player, :url=>party_players_path do |f| %>
+  <fieldset>
+    <legend>Player Details</legend>
+    <ul>
+      <li>
+        <%= f.label :name %>:
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <%= f.label :tripcode %>
+        <%= f.text_field :tripcode %>
+      </li>
+    </ul>
+  </fieldset>
+  <%= f.submit  %>
+>>>>>>> Stashed changes:app/views/players/new.html.erb
 <% end %>

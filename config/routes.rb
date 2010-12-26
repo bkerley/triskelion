@@ -5,6 +5,8 @@ Triskelion::Application.routes.draw do
     resources :chats
   end
 
+  root :to => "parties#index"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
