@@ -42,5 +42,20 @@ class RollsControllerTest < ActionController::TestCase
         assert_equal 1, (new_rolls - @old_rolls).length
       end
     end
+
+    context 'JS POST to create' do
+      setup do
+        @old_rolls = @party.rolls.all.to_a
+        post :create, :party_id=>@party.id, :roll=>{ :code=>'4d20'}, :format=>:js
+      end
+
+      should 'have created a roll' do
+        new_rolls = @party.rolls.all.to_a
+        assert_equal 1, (new_rolls - @old_rolls).length
+      end
+
+      should respond_with :success
+      should respond_with_content_type :js
+    end
   end
 end

@@ -41,5 +41,19 @@ class ChatsControllerTest < ActionController::TestCase
         assert @party.chats.find_by_content @chat[:content]
       end
     end
+
+    context 'JS POST to create' do
+      setup do
+        @chat = Factory.attributes_for :chat
+        post :create, :party_id=>@party.id, :chat=>@chat, :format=>:js
+      end
+
+      should respond_with :success
+      should respond_with_content_type :js
+
+      should 'have created a chat' do
+        assert @party.chats.find_by_content @chat[:content]
+      end
+    end
   end
 end
