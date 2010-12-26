@@ -1,2 +1,37 @@
-<h1>Party#show</h1>
-<p>Find me in app/views/party/show.html.erb</p>
+<%=h @party.inspect %>
+
+<div id="chats">
+  <h2>Chat</h2>
+  <ol>
+    <% @party.chats.each do |c| %>
+      <li id="<%= dom_id c %>"><%=h c.inspect %></li>
+    <% end %>
+  </ol>
+
+  <div class="form_container">
+    <%= form_for @party.chats.build, :url=>party_chats_path(@party), :remote=>true do |f| %>
+      <p>
+        <%= f.text_field :content %>
+        <%= f.submit 'Chat' %>
+      </p>
+    <% end %>
+  </div>
+</div>
+
+<div id="rolls">
+  <h2>Rolls</h2>
+  <ol>
+    <% @party.rolls.each do |r| %>
+      <li id="<%= dom_id r %>"><%=h r.inspect %></li>
+    <% end %>
+  </ol>
+
+  <div class="form_container">
+    <%= form_for @party.rolls.build, :url=>party_rolls_path(@party), :remote=>true do |f| %>
+      <p>
+        <%= f.text_field :code %>
+        <%= f.submit 'Roll' %>
+      </p>
+    <% end %>
+  </div>
+</div>
