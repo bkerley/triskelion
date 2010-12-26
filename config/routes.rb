@@ -7,7 +7,6 @@ Triskelion::Application.routes.draw do
 
   root :to => "parties#index"
 
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
