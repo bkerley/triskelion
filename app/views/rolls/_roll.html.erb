@@ -1,0 +1,12 @@
+<li id="<= dom_id roll %>">
+  (<%= roll.created_at %>)
+  <%= roll.player.name %>@<%= roll.player.tripcode_digest %>
+  <%=h roll.code %>:
+  <%=h roll.result %>
+  <%=h roll.description %>
+  <!--
+     <%=h roll.inspect %> 
+
+     <%=h roll.player.inspect %>
+    -->
+</li>
