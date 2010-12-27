@@ -1,7 +1,7 @@
 <li class="roll" id="<= dom_id roll %>">
   <span class="timestamp"><%= roll.created_at %></span>
   <span class="player">
-    <span class="name"><%= roll.player.name %></span>
+    <span class="name" style="color:<%= roll.player.chat_color %>"><%= roll.player.name %></span>
     <span class="tripcode"><%= roll.player.tripcode_digest %></span>
   </span>
   <span class="code"><%=h roll.code %></span>

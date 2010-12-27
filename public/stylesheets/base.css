@@ -31,6 +31,34 @@ div#rolls ol{
     overflow-y: scroll;
 }
 
+div#chats ol li,
+div#rolls ol li{
+    padding-left: 1em;
+}
+
 div.form_container{
     margin-top: 1em;
+}
+
+#roll_list .player,
+#chat_list .player{
+    color: #2EFE2E;
+}
+
+#roll_list .name,
+#chat_list .name{
+    font-weight: bold;
+}
+
+#roll_list .tripcode,
+#chat_list .tripcode{
+    color: #A4A4A4;
+    font-family: monospace;
+}
+
+#roll_list .code{
+    color: #088A85;
+    font-family: monospace;
+    font-size: 1.2em;
+    font-weight: bold;
 }
