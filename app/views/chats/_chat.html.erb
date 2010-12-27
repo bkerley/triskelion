@@ -1,1 +1,10 @@
-<li>(<% chat.created_at %>) <% chat.player.name %>@<%= chat.player.tripcode_hash %> <%= chat.content %></li>
+<li id="<= dom_id chat %>">
+  (<%= chat.created_at %>)
+  <%= chat.player.name %>@<%= chat.player.tripcode_digest %>
+  <%= chat.content %>
+  <!--
+     <%=h chat.inspect %> 
+
+     <%=h chat.player.inspect %>
+    -->
+</li>
