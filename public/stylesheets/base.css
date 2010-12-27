@@ -1,0 +1,36 @@
+body, html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: #C8C8C8;
+    color: white;
+    text-align:center;
+}
+
+#pagewrapper{
+    background-color: black;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px 1em;
+    width: 1024px;
+}
+
+div#chats,
+div#rolls{
+    font-size: 0.8em;
+    text-align: left;
+    margin-bottom: 2em;
+}
+
+div#chats ol,
+div#rolls ol{
+    border: 1px solid gray;
+    height: 15em;
+    overflow-y: scroll;
+}
+
+div.form_container{
+    margin-top: 1em;
+}

@@ -1,2 +1,3 @@
 rendered_chat = render :partial=>'chats/chat', :object=>@chat
 page.insert_html :bottom, 'chat_list', rendered_chat
+page<<"document.getElementById('chat_list').scrollTop = document.getElementById('chat_list').scrollHeight;"

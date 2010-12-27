@@ -4,7 +4,7 @@
   <h2>Chat</h2>
   <ol id="chat_list">
     <% @party.chats.each do |c| %>
-      <li id="<%= dom_id c %>"><%=h c.inspect %></li>
+      <%= render c %>
     <% end %>
   </ol>
 
@@ -22,7 +22,7 @@
   <h2>Rolls</h2>
   <ol id="roll_list">
     <% @party.rolls.each do |r| %>
-      <li id="<%= dom_id r %>"><%=h r.inspect %></li>
+      <%= render r %>
     <% end %>
   </ol>
 
