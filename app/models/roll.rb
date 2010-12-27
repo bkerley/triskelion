@@ -22,7 +22,7 @@ class Roll < ActiveRecord::Base
   def roll_dice
     results_array = (1..self.count).to_a.map{ roll_a_die }
     self.result = results_array.inject(&:+)
-    self.description = results_array.join ' '
+    self.description = results_array.join ','
   end
 
   def roll_a_die

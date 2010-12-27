@@ -1,5 +1,5 @@
 <li class="chat" id="<%= dom_id chat %>">
-  <span class="timestamp"><%= chat.created_at %></span>
+  <span class="timestamp"><%= chat.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span>
   <span class="player">
     <span class="name" style="color:<%= chat.player.chat_color %>"><%= chat.player.name %></span>
     <span class="tripcode"><%= chat.player.tripcode_digest %></span>

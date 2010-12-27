@@ -1,5 +1,5 @@
 <li class="roll" id="<= dom_id roll %>">
-  <span class="timestamp"><%= roll.created_at %></span>
+  <span class="timestamp"><%= roll.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span>
   <span class="player">
     <span class="name" style="color:<%= roll.player.chat_color %>"><%= roll.player.name %></span>
     <span class="tripcode"><%= roll.player.tripcode_digest %></span>

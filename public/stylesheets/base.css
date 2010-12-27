@@ -56,9 +56,45 @@ div.form_container{
     font-family: monospace;
 }
 
-#roll_list .code{
-    color: #088A85;
+#roll_list .timestamp,
+#chat_list .timestamp{
+    color: #A4A4A4;
+    font-family: monospace;
+}
+
+#roll_list .timestamp:after,
+#chat_list .timestamp:after{
+    content: " > ";
+}
+
+#roll_list .code,
+#roll_list .result,
+#roll_list .description{
     font-family: monospace;
     font-size: 1.2em;
+}
+
+#roll_list .code{
     font-weight: bold;
+}
+
+#roll_list .result{
+    color: #5858FA;
+    font-weight: bold;
+}
+
+#roll_list .description{
+    color: #BDBDBD;
+}
+
+#roll_list .result:before{
+    content: "=";
+}
+
+#roll_list .description:before{
+    content: "(";
+}
+
+#roll_list .description:after{
+    content: ")";
 }
