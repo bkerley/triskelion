@@ -1,2 +1,2 @@
-rendered_chat = "<li id='#{dom_id @chat}'>#{h @chat.inspect}</li>"
+rendered_chat = render :partial=>'chats/chat', :object=>@chat
 page.insert_html :bottom, 'chat_list', rendered_chat
