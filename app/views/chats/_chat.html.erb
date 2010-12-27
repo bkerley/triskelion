@@ -1,10 +1,10 @@
-<li id="<= dom_id chat %>">
-  (<%= chat.created_at %>)
-  <%= chat.player.name %>@<%= chat.player.tripcode_digest %>
-  <%= chat.content %>
-  <!--
-     <%=h chat.inspect %> 
-
-     <%=h chat.player.inspect %>
-    -->
+<li class="chat" id="<= dom_id chat %>">
+  <span class="timestamp"><%= chat.created_at %></span>
+  <span class="player">
+    <span class="name"><%= chat.player.name %></span>
+    <span class="tripcode"><%= chat.player.tripcode_digest %></span>
+  </span>
+  <span class="content">
+    <%= chat.content %>
+  </span>
 </li>
