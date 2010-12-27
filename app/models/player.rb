@@ -11,9 +11,10 @@ class Player < ActiveRecord::Base
   end
 
   def chat_color
-    ccode = "#9" + colorcode_digest[0,3][0]
-    ccode += "9" + colorcode_digest[0,3][1]
-    ccode += "9" + colorcode_digest[0,3][2]
-    return ccode;
+    digest = colorcode_digest
+    r = (digest[0..1].to_i(16) >> 1) + 127
+    g = (digest[2..3].to_i(16) >> 1) + 127
+    b = (digest[4..5].to_i(16) >> 1) + 127
+    "##{r.to_s 16}#{g.to_s 16}#{b.to_s 16}"
   end
 end

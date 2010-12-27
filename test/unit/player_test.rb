@@ -12,5 +12,9 @@ class PlayerTest < ActiveSupport::TestCase
     should 'have a tripcode_digest' do
       assert @player.tripcode_digest
     end
+
+    should 'have a chat_color' do
+      assert @player.chat_color
+    end
   end
 end
