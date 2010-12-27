@@ -24,16 +24,35 @@ div#rolls{
     margin-bottom: 2em;
 }
 
+#chats{
+    float: left;
+    width: 65%;
+}
+
+#rolls{
+    float: right;
+    width: 33%;
+}
+
+div#chats input#chat_content{
+    width: 90%;
+}
+
+div#rolls input#roll_code{
+    width: 80%;
+}
+
 div#chats ol,
 div#rolls ol{
     border: 1px solid gray;
-    height: 15em;
+    height: 30em;
     overflow-y: scroll;
 }
 
 div#chats ol li,
 div#rolls ol li{
     padding-left: 1em;
+    position: relative;
 }
 
 div.form_container{
@@ -62,9 +81,12 @@ div.form_container{
     font-family: monospace;
 }
 
-#roll_list .timestamp:after,
 #chat_list .timestamp:after{
     content: " > ";
+}
+
+#roll_list .timestamp:before{
+    content: "< ";
 }
 
 #roll_list .code,
@@ -97,4 +119,18 @@ div.form_container{
 
 #roll_list .description:after{
     content: ")";
+}
+
+#roll_list li:hover span.timestamp{
+    background-color: black;
+    border: 1px solid gray;
+    display: block;
+    padding: 0.5em;
+    position: absolute;
+    right: 1em;
+    z-index: 1000;
+}
+
+#roll_list li span.timestamp{
+    display: none;
 }
