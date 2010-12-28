@@ -159,3 +159,25 @@ a#new_party_link{
     color: white;
     text-decoration: none;
 }
+
+fieldset#player_form{
+    background: rgba(0, 0, 0, 0.6);
+    margin: 0px auto;
+    padding: 1em;
+    text-align: left;
+    width: 50%;
+}
+
+fieldset#player_form label{
+    display: block;
+    text-align: left;
+}
+
+fieldset#player_form ul{
+    margin-bottom: 1em;
+}
+
+fieldset#player_form li input{
+    margin-bottom: 1em;
+    width: 100%;
+}
