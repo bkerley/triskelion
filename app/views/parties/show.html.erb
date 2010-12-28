@@ -1,3 +1,10 @@
+<script type="text/javascript">
+  document.observe('dom:loaded', function(){
+    scroll_to_bottom('chat_list');
+    scroll_to_bottom('roll_list');
+  });
+</script>
+
 <h1>Triskelion Party <%=h @party.id %></h1>
 
 <div id="chats">

@@ -1,7 +1,11 @@
 <h1>Triskelion</h1>
 
-<p>
+<p class="intro">
+  Triskelion is a chat and dice rolling system.
+</p>
+
+<p class="intro">
   Ask your DM for the url of your party, or use the link below to create a new one.
 </p>
 
-<%= link_to "Create new Party", parties_path, :method=>:post %>
+<%= link_to "Create new Party", parties_path, :id=> "new_party_link", :method=>:post %>

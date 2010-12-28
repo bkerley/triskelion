@@ -11,8 +11,12 @@ body{
 
 #pagewrapper{
     background-color: black;
-    min-height: 100%;
+    background-image: url(/images/triskelion_white.png);
+    background-position: 50% 5em;
+    background-repeat: no-repeat;
+    height: 100%;
     margin: 0px auto;
+    min-height: 100%;
     padding: 0px 1em;
     width: 1024px;
 }
@@ -47,6 +51,7 @@ div#rolls ol{
     border: 1px solid gray;
     height: 30em;
     overflow-y: scroll;
+    background: rgba(0, 0, 0, 0.6);
 }
 
 div#chats ol li,
@@ -133,4 +138,24 @@ div.form_container{
 
 #roll_list li span.timestamp{
     display: none;
+}
+
+p.intro{
+    background: rgba(0, 0, 0, 0.6);
+    margin: 0px auto;
+    width: 60%;
+    border: 1px #555555;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+a#new_party_link{
+    display: block;
+    padding: 1em;
+    border: 2px outset gray;
+    width: 10em;
+    margin: 0px auto;
+    background-color: #555555;
+    color: white;
+    text-decoration: none;
 }

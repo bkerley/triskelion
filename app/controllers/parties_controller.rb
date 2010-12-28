@@ -1,9 +1,15 @@
 class PartiesController < ApplicationController
+  before_filter :require_player
+
+  def party_id
+    params[:id]
+  end
+
   def index
   end
 
   def show
-    @party = Party.find params[:id]
+    load_party
   end
 
   def create
