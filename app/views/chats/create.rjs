@@ -1,3 +1,4 @@
 rendered_chat = render :partial=>'chats/chat', :object=>@chat
 page.insert_html :bottom, 'chat_list', rendered_chat
 page<<"scroll_to_bottom('chat_list');"
+page << "$('chat_content').value = ''"
