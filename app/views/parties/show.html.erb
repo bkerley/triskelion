@@ -2,6 +2,7 @@
   document.observe('dom:loaded', function(){
     scroll_to_bottom('chat_list');
     scroll_to_bottom('roll_list');
+    set_focus('chat_content');
   });
 </script>
 
@@ -18,7 +19,7 @@
   <div class="form_container">
     <%= form_for @party.chats.build, :url=>party_chats_path(@party), :remote=>true do |f| %>
       <p>
-        <%= f.text_field :content %>
+        <%= f.text_field :content, :id=>"chat_content" %>
         <%= f.submit 'Chat' %>
       </p>
     <% end %>
