@@ -1,5 +1,5 @@
 class PartiesController < ApplicationController
-  before_filter :require_player
+  before_filter :require_player, :only => :show
 
   def party_id
     params[:id]
