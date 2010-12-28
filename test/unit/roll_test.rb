@@ -56,7 +56,7 @@ class RollTest < ActiveSupport::TestCase
       end
 
       should 'have a description that adds up to the result' do
-        description_sum = @roll.description.split.map(&:to_i).inject{ |m,o| m+o }
+        description_sum = @roll.description.split(',').map(&:to_i).inject{ |m,o| m+o }
         assert_equal @roll.result, description_sum
       end
     end
