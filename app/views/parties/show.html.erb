@@ -10,7 +10,7 @@
 
 <div id="chats">
   <h2>Chat</h2>
-  <ol id="chat_list">
+  <ol id="chat_list" onClick="set_focus('chat_content');return false;">
     <% @party.chats.each do |c| %>
       <%= render c %>
     <% end %>
@@ -28,7 +28,7 @@
 
 <div id="rolls">
   <h2>Rolls</h2>
-  <ol id="roll_list">
+  <ol id="roll_list" onClick="set_focus('roll_content');return false;">
     <% @party.rolls.each do |r| %>
       <%= render r %>
     <% end %>
@@ -37,7 +37,7 @@
   <div class="form_container">
     <%= form_for @party.rolls.build, :url=>party_rolls_path(@party), :remote=>true do |f| %>
       <p>
-        <%= f.text_field :code %>
+        <%= f.text_field :code, :id => "roll_content"%>
         <%= f.submit 'Roll' %>
       </p>
     <% end %>
