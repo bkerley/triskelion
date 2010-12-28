@@ -8,14 +8,32 @@ class PartiesControllerTest < ActionController::TestCase
     should respond_with :success
   end
 
-  context 'GET to show' do
+  context 'when user is logged in' do
+    setup do
+      @player = Factory :player
+      session[:player_id] = @player.id
+    end
+    
+    context 'GET to show' do
+      setup do
+        @party = Factory :party
+        get :show, :id=>@party.id
+      end
+      should respond_with :success
+    end
+  end
+
+  context 'GET to show while not logged in' do
     setup do
       @party = Factory :party
       get :show, :id=>@party.id
     end
 
-    should respond_with :success
+    should(redirect_to('the new player form') do
+      new_party_player_path :party_id=>@party.id
+    end)
   end
+
 
   context 'POST to create' do
     setup do
