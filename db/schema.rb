@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101127214614) do
+ActiveRecord::Schema.define(:version => 20101229040618) do
 
   create_table "chats", :force => true do |t|
     t.integer  "party_id"
@@ -35,12 +35,11 @@ ActiveRecord::Schema.define(:version => 20101127214614) do
   create_table "rolls", :force => true do |t|
     t.integer  "party_id"
     t.integer  "player_id"
-    t.integer  "count"
-    t.integer  "sides"
     t.integer  "result"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "code"
   end
 
 end

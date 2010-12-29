@@ -5,6 +5,6 @@
     <span class="tripcode"><%= chat.player.tripcode_digest %></span>
   </span>
   <span class="content">
-    <%= chat.content %>
+    <%=auto_link chat.content, :html=>{:target=>'_blank'} %>
   </span>
 </li>

@@ -38,14 +38,6 @@ class RollTest < ActiveSupport::TestCase
         assert Roll.find @roll.id
       end
 
-      should 'set a count of 4' do
-        assert_equal 4, @roll.count
-      end
-
-      should 'set a sides of 6' do
-        assert_equal 6, @roll.sides
-      end
-
       should 'have a code of "4d6"' do
         assert_equal '4d6', @roll.code
       end
@@ -55,10 +47,10 @@ class RollTest < ActiveSupport::TestCase
         assert(@roll.result <= 24)
       end
 
-      should 'have a description that adds up to the result' do
-        description_sum = @roll.description.split(',').map(&:to_i).inject{ |m,o| m+o }
-        assert_equal @roll.result, description_sum
-      end
+      # should 'have a description that adds up to the result' do
+      #   description_sum = @roll.description.split(',').map(&:to_i).inject{ |m,o| m+o }
+      #   assert_equal @roll.result, description_sum
+      # end
     end
   end
 end

@@ -10,8 +10,7 @@ Factory.define :roll do |r|
   # party_id:integer player_id:integer count:integer sides:integer result:integer description:text
   r.association :party
   r.association :player
-  r.count 2
-  r.sides 6
+  r.code '2d6'
 end
 
 Factory.define :chat do |c|
