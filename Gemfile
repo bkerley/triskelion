@@ -12,6 +12,8 @@ gem 'unicorn'
 
 gem 'crapshoot'
 
+gem 'pg'
+
 # Deploy with Capistrano
 # gem 'capistrano'
 
