@@ -9,7 +9,8 @@ class Roll < ActiveRecord::Base
 
   private
   def roll_dice
-    self.result = Crapshoot.roll self.code
-    self.description = self.result
+    roll = Crapshoot.roll self.code
+    self.result = roll
+    self.description = roll.description
   end
 end
