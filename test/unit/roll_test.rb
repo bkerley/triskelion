@@ -46,11 +46,6 @@ class RollTest < ActiveSupport::TestCase
         assert(4 <= @roll.result)
         assert(@roll.result <= 24)
       end
-
-      # should 'have a description that adds up to the result' do
-      #   description_sum = @roll.description.split(',').map(&:to_i).inject{ |m,o| m+o }
-      #   assert_equal @roll.result, description_sum
-      # end
     end
   end
 end
