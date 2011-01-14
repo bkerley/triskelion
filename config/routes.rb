@@ -3,6 +3,7 @@ Triskelion::Application.routes.draw do
     resources :players
     resources :rolls
     resources :chats
+    resources :messages
   end
 
   root :to => "parties#index"
