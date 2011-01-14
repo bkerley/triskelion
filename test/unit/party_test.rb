@@ -8,5 +8,30 @@ class PartyTest < ActiveSupport::TestCase
 
     should have_many :rolls
     should have_many :chats
+
+    context 'messaging functionality' do
+      setup do
+        @start = Time.now
+        @foreign_roll = Factory :roll
+        @foreign_chat = Factory :chat
+      end
+
+      context 'with no messages' do
+        should 'not find any messages' do
+          assert_equal [], @party.messages_since(@start)
+        end
+      end
+
+      context 'with messages' do
+        setup do
+          @my_roll = Factory :roll, :party=>@party
+          @my_chat = Factory :chat, :party=>@party
+        end
+
+        should 'find some messages' do
+          assert_equal [@my_roll, @my_chat], @party.messages_since(@start)
+        end
+      end
+    end
   end
 end
