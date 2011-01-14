@@ -8,6 +8,13 @@ class RollTest < ActiveSupport::TestCase
 
     should belong_to :player
     should belong_to :party
+
+    should 'be findable with the "since" scope' do
+      @new_roll = Factory :roll
+
+      assert_equal [@roll, @new_roll], Roll.since(@roll.created_at - 1)
+      assert_equal [@new_roll], Roll.since(@roll.created_at)
+    end
   end
 
   context 'a built roll for a party' do

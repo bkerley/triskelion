@@ -3,6 +3,8 @@ class Roll < ActiveRecord::Base
   belongs_to :player
   before_create :roll_dice
 
+  scope :since, lambda { |time| where 'created_at > ?', time }
+
   def self.create_with_code(options)
     create options
   end
