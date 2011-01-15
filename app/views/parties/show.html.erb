@@ -17,7 +17,9 @@
   </ol>
 
   <div class="form_container">
-    <%= form_for @party.chats.build, :url=>party_chats_path(@party), :remote=>true do |f| %>
+    <%= form_for @party.chats.build, :url=>party_chats_path(@party),
+    :remote=>true do |f| %>
+      <%= hidden_field_tag :since, Time.now.to_f, :id=>'chat_since' %>
       <p>
         <%= f.text_field :content, :id=>"chat_content" %>
         <%= f.submit 'Chat' %>
@@ -36,6 +38,7 @@
 
   <div class="form_container">
     <%= form_for @party.rolls.build, :url=>party_rolls_path(@party), :remote=>true do |f| %>
+      <%= hidden_field_tag :since, Time.now.to_f, :id=>'roll_since' %>
       <p>
         <%= f.text_field :code, :id => "roll_content"%>
         <%= f.submit 'Roll' %>
