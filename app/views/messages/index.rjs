@@ -1,0 +1,18 @@
+queued_messages.each do |m|
+  case m
+  when Chat
+    rendered_chat = render :partial=>'chats/chat', :object=>m
+    page.insert_html :bottom, 'chat_list', rendered_chat
+  when Roll
+    rendered_roll = render :partial=>'rolls/roll', :object=>m
+    page.insert_html :bottom, 'roll_list', rendered_roll
+    page.insert_html :bottom, 'chat_list', rendered_roll
+  end
+end
+
+unless queued_messages.empty?
+  page << "scroll_to_bottom('chat_list');"
+  page << "scroll_to_bottom('roll_list');"
+  page << "$('roll_since').value = #{queued_messages.last.created_at.to_f}"
+  page << "$('chat_since').value = #{queued_messages.last.created_at.to_f}"
+end
