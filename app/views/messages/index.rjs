@@ -11,8 +11,11 @@ queued_messages.each do |m|
 end
 
 unless queued_messages.empty?
+  since_time = queued_messages.last.created_at
+  # can't use a float because accuracy
+  since = "#{since_time.to_i}.#{since_time.usec + 1}"
   page << "scroll_to_bottom('chat_list');"
   page << "scroll_to_bottom('roll_list');"
-  page << "$('roll_since').value = #{queued_messages.last.created_at.to_f}"
-  page << "$('chat_since').value = #{queued_messages.last.created_at.to_f}"
+  page << "$('roll_since').value = #{since};"
+  page << "$('chat_since').value = #{since};"
 end
