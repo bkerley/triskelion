@@ -12,7 +12,7 @@
 <div id="chats">
   <h2>Chat</h2>
   <ol id="chat_list" onClick="set_focus('chat_content');return false;">
-    <% @party.chats.each do |c| %>
+    <% @party.recent_messages.each do |c| %>
       <%= render c %>
     <% end %>
   </ol>

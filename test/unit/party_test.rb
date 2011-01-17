@@ -9,7 +9,18 @@ class PartyTest < ActiveSupport::TestCase
     should have_many :rolls
     should have_many :chats
 
-    context 'messaging functionality' do
+    context 'recent_messages method' do
+      setup do
+        @my_roll = Factory :roll, :party=>@party
+        @my_chat = Factory :chat, :party=>@party
+      end
+
+      should 'find a roll and chat' do
+        assert_equal [@my_roll, @my_chat], @party.recent_messages
+      end
+    end
+
+    context 'messages_since method' do
       setup do
         @start = Time.now
         @foreign_roll = Factory :roll
