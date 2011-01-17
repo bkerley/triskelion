@@ -14,3 +14,25 @@ function set_focus(el_id){
         el.focus();
     }
 }
+
+var PartyUpdater = Class.create({
+  initialize: function() {
+    this.delay = 5;
+    this.messageUrl = document.location.href + '/messages';
+    this.scheduleNextTimerEvent();
+  },
+  scheduleNextTimerEvent: function() {
+    this.onTimerEvent.bind(this).delay(this.delay);
+  },
+  onTimerEvent: function() {
+    var sinceValue = $('roll_since').value;
+    var urlWithSince = this.messageUrl + '?' + $H({since: sinceValue}).toQueryString();
+    this.request = new Ajax.Request(urlWithSince, {
+      method: 'get',
+      onSuccess: this.onSuccess.bind(this)});
+
+  },
+  onSuccess: function() {
+    this.scheduleNextTimerEvent();
+  }
+});
