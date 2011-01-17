@@ -54,8 +54,7 @@ div#rolls ol{
     background: rgba(0, 0, 0, 0.6);
 }
 
-div#chats ol li,
-div#rolls ol li{
+ol li {
     padding-left: 1em;
     position: relative;
 }
@@ -64,26 +63,20 @@ div.form_container{
     margin-top: 1em;
 }
 
-#roll_list .player,
-#chat_list .player{
+.player {
     color: #2EFE2E;
 }
 
-#roll_list .name,
-#chat_list .name{
+.name {
     font-weight: bold;
 }
 
-#roll_list .tripcode,
-#chat_list .tripcode{
+.tripcode {
     color: #A4A4A4;
-    font-family: monospace;
 }
 
-#roll_list .timestamp,
-#chat_list .timestamp{
+.timestamp {
     color: #A4A4A4;
-    font-family: monospace;
 }
 
 #chat_list .timestamp:after{
@@ -94,35 +87,35 @@ div.form_container{
     content: "< ";
 }
 
-#roll_list .code,
-#roll_list .result,
-#roll_list .description{
-    font-family: monospace;
-    font-size: 1.2em;
+.timestamp,
+.code,
+.result,
+.description{
+    /* monospaced font from typekit */
 }
 
-#roll_list .code{
+.code{
     font-weight: bold;
 }
 
-#roll_list .result{
+.result{
     color: #5858FA;
     font-weight: bold;
 }
 
-#roll_list .description{
+.description{
     color: #BDBDBD;
 }
 
-#roll_list .result:before{
+.result:before{
     content: "=";
 }
 
-#roll_list .description:before{
+.description:before{
     content: "(";
 }
 
-#roll_list .description:after{
+.description:after{
     content: ")";
 }
 
