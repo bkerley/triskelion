@@ -11,7 +11,7 @@ class ChatsController < ApplicationController
     @chat = @party.chats.create! :player=>current_player, :content=>params[:chat][:content]
     respond_to do |wants|
       wants.html { redirect_to party_chats_path @party.id }
-      wants.js
+      wants.js { render :template=>'messages/index' }
     end
   end
 end

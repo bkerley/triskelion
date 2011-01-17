@@ -11,7 +11,7 @@ class RollsController < ApplicationController
     @roll = Roll.create_with_code :code=>params[:roll][:code], :player=>current_player, :party=>@party
     respond_to do |wants|
       wants.html { redirect_to party_rolls_path @party.id }
-      wants.js
+      wants.js { render :template=>'messages/index' }
     end
   end
 end
